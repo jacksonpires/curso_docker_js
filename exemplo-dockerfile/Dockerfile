@@ -32,4 +32,9 @@ USER root
 EXPOSE 22
 EXPOSE 3090
 
+# Cria e configura o ponto de montagem do volume
+RUN mkdir /workspace
+RUN chmod 777 /workspace
+VOLUME /workspace
+
 CMD    ["/usr/sbin/sshd", "-D"]
