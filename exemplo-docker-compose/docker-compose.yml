@@ -2,6 +2,7 @@ version: '3'
 
 services:
   nodejs:
+    build: .
     image: jacksonpires/ubuntu-ssh-nvm
     volumes:
       - .:/workspace
