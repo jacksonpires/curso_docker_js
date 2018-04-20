@@ -9,6 +9,10 @@ services:
     ports:
       - "22"
       - "3090"
+    depends_on:
+      - db
+    networks:
+      - my_network
   db:
     image: postgres
     restart: always
@@ -18,4 +22,10 @@ services:
       - "5432"
     volumes:
       - ./dados_postgres:/var/lib/postgresql/data
-    
+    networks:
+      my_network:
+        aliases:
+          - pgsql
+
+networks: 
+  my_network:
