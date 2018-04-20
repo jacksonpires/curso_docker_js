@@ -2,8 +2,8 @@ FROM  ubuntu:latest
 LABEL maintainer="Jackson Pires"
 
 # Atualiza o SO
-RUN apt-get update
-RUN apt-get install -y openssh-server vim curl
+RUN apt-get update && apt-get install -y openssh-server vim curl sudo
+RUN apt-get update && apt-get install -y git
 RUN mkdir /var/run/sshd
 
 # Configura o SSH

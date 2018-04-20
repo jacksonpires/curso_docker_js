@@ -3,9 +3,19 @@ version: '3'
 services:
   nodejs:
     build: .
-    image: jacksonpires/ubuntu-ssh-nvm
+    image: jacksonpires/ubuntu-ssh-nvm:latest
     volumes:
       - .:/workspace
     ports:
       - "22"
       - "3090"
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: mysecretpassword
+    ports:
+      - "5432"
+    volumes:
+      - ./dados_postgres:/var/lib/postgresql/data
+    
