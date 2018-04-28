@@ -1,0 +1,15 @@
+version: '3'
+services:
+  nodejs:
+    image: jacksonpires/app-node-dockerizado:latest
+    build: .
+    ports:
+      - 3090
+    depends_on:
+      - db
+  db:
+    image: postgres
+    volumes:
+      - ./dados_postgres:/var/lib/postgresql/data
+    ports:
+      - 5432
