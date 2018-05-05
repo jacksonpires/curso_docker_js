@@ -7,3 +7,4 @@
 exemplo-docker-compose/dados_postgres/
 exemplo-docker-compose/crud-node-postgres/
 nginx-nodejs-postgres/dados_postgres/
+nginx-nodejs-postgres/crud-node-postgres/

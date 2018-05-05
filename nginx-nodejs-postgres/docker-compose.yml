@@ -14,3 +14,11 @@ services:
       - ./dados_postgres:/var/lib/postgresql/data
     ports:
       - 5432
+  minha_app:
+    image: jacksonpires/minha-app-dockerizada:latest
+    build: .
+    ports:
+      - 3090
+    depends_on:
+      - db
+
